@@ -12,5 +12,16 @@ services:
     ports:
       - "3306:3306"
 
+  php-apache:
+    depends_on:
+      - db
+    build:
+      context: ./
+      dockerfile: dockerfile-php-apache
+    volumes:
+      - ./:/var/www/html/
+    ports:
+      - "8080:80"
+
 volumes:
   mysql:
