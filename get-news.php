@@ -20,16 +20,15 @@ if (!$result) {
 
 $output = array();
 while ($row = mysql_fetch_assoc($result)) {
-  echo $row;
-	// $post = array(
-	// 	'id' => $row['id'],
-	// 	'groups' => $row['groups'],
-	// 	'postdate' => $row['postdate'],
-	// 	'title' => strip_tags($row['title']),
-	// 	'department' => $row['department'],
-	// 	'content' => strip_tags($row['description'])
-	// );
-	// array_push($output, $post);
+	$post = array(
+		'id' => $row['id'],
+		'groups' => $row['groups'],
+		'postdate' => $row['postdate'],
+		'title' => strip_tags($row['title']),
+		'department' => $row['department'],
+		'content' => strip_tags($row['description'])
+	);
+	array_push($output, $post);
 }
 
 $json = json_encode($output);
