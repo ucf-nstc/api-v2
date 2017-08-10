@@ -7,7 +7,7 @@ class News {
     $sql = "SELECT `news`.`id`, DATE_FORMAT(`datestamp`,\"%M %Y\")
       as dateinfo, `moreinfo`,`title`, `photo_path`,`photo_path2`,`description`,`department`, `postdate`, `groups`
       FROM `news`
-      ORDER BY id desc";
+      ORDER BY datestamp desc";
 
     $output = array();
     $result = Database::query($sql);
